@@ -165,10 +165,35 @@ private:
 ////////////////////////////////////////////////////////////////////////////////
 /// \class QArgumentParser
 ///
-/// This class
+/// This class parses the command line arguments and validates them on request.
+/// Use it as follows:
 ///
 /// \code
-/// <example_code>
+/// QArgumentParser parser(argc, argv);
+/// QArgumentValidator validator;
+/// QArgumentValidatorOption file("file"), amount("amount");
+///
+/// // Builds the validator.
+/// file.addArgument("f", QArgumentValidatorOption::File);
+/// amount.addArgument("s", QArgumentValidatorOption::Int64);
+/// validator.addOption(file);
+/// validator.addOption(amount);
+/// parser.setValidator(validator);
+///
+/// // Attempts to parse the arguments.
+/// auto result = parser.parse();
+/// if (result == QArgumentParser::Failure)
+/// {
+///     qDebug().noquote() << parser.errorMessage();
+/// }
+/// else if (result == QArgumentParser::HelpRequested)
+/// {
+///     qDebug().noquote() << "Usage: [...]";
+/// }
+/// else
+/// {
+///     // [process the file]
+/// }
 /// \endcode
 ///
 ////////////////////////////////////////////////////////////////////////////////
