@@ -74,6 +74,12 @@ void QArgumentParser::setOptionIndicator(const QString& indicator)
 
 QArgumentParser::ResultType QArgumentParser::parse()
 {
+    // We could potentially get errors when having zero arguments.
+    if (m_arguments.size() == 0)
+    {
+        return HelpRequested;
+    }
+
     bool mustValidate = m_validator.optionCount() > 0;
 
     QString currentOption;
