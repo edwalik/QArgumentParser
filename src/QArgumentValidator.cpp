@@ -136,6 +136,9 @@ bool QArgumentValidator::validate(
             case QArgumentValidatorOption::Directory:
                 result = validateDirectory(arg, msg);
                 break;
+
+            default:
+                break;
         }
 
         if (result != true)

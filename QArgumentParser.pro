@@ -11,10 +11,15 @@
 #
 ###########################################################
 TARGET   = QArgumentParser
-TEMPLATE = lib
 QT      -= gui
+TEMPLATE = lib
 CONFIG  += plugin c++11
 DEFINES += QARGUMENTPARSER_BUILD_SHARED
+
+static {
+    CONFIG  += staticlib
+    DEFINES += QARGUMENTPARSER_BUILD_STATIC
+}
 
 ###########################################################
 # WINDOWS SETTINGS
@@ -69,7 +74,7 @@ SOURCES += src/QArgumentOption.cpp \
 ##
 ################################################################################
 include(platforms/platforms.pri)
-message(Writing library to: $${PWD}/bin/$${kgl_path})
+message(Library path is bin/$${kgl_path})
 
 DESTDIR     = $${PWD}/bin/$${kgl_path}
 OBJECTS_DIR = $${DESTDIR}/obj

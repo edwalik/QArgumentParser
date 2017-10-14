@@ -30,7 +30,7 @@ template<typename T> inline T QArgumentOption::argument(int index) const
         return T();
     }
 
-    return argument<T>(m_arguments.keys.at(index));
+    return argument<T>(m_arguments.keys().at(index));
 }
 
 template<> inline char QArgumentOption::argument(const QString& name) const
