@@ -74,7 +74,7 @@ SOURCES += src/QArgumentOption.cpp \
 ##
 ################################################################################
 include(platforms/platforms.pri)
-message(Library path is bin/$${kgl_path})
+message(Library path is \"bin/$${kgl_path}\")
 
 DESTDIR     = $${PWD}/bin/$${kgl_path}
 OBJECTS_DIR = $${DESTDIR}/obj

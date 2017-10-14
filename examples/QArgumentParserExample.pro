@@ -20,7 +20,7 @@ win32 {
 INCLUDEPATH += ../include
 
 include(../platforms/platforms.pri)
-message(Linking to ../bin/$${kgl_path})
+message(Linking to \"../bin/$${kgl_path}\")
 
 LIBS       += -L$${PWD}/../bin/$${kgl_path} -lQArgumentParser
 DESTDIR     = $${PWD}/bin/$${kgl_path}
