@@ -1,3 +1,5 @@
+  Please do not use this unless you are working with Qt already and do not want to link to boost-program-options
+
 # QArgumentParser
 [![License](https://img.shields.io/badge/license-LGPL%203.0-blue.svg?style=flat)](https://github.com/glClear/QGameBoy/blob/master/LICENSE)
 [![Binaries](https://img.shields.io/badge/OS-windows%2Flinux%2FmacOSX-blue.svg)](https://github.com/glClear/QGameBoy/releases)
